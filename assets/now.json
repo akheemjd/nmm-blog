@@ -1,0 +1,15 @@
+{
+  "ca": 264.2,
+  "ca_d7": -0.1,
+  "us": 6.352,
+  "us_d7": 0.076,
+  "gap": "29.9",
+  "gap_word": "Canada higher",
+  "usd_cad": 1.396,
+  "slowest": {
+    "name": "Blue Water Bridge",
+    "mins": 35,
+    "dir": "into the US"
+  },
+  "generated": "2026-11-01T21:00:56+00:00"
+}
