@@ -44,7 +44,8 @@
   /* The numbers. Real, dated, on screen. This is what the site is. */
   .strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink);
          border-bottom:1px solid var(--rule)}
-  .cell{padding:18px 16px 18px 0;border-right:1px solid var(--rule)}
+  .cell{padding:18px 22px 18px 22px;border-right:1px solid var(--rule)}
+  .cell:first-child{padding-left:0}
   .cell:last-child{border-right:0;padding-right:0}
   .cell .lab{font:600 10px/1 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.11em;
              color:var(--mute);margin-bottom:9px}
@@ -86,8 +87,8 @@
   @media(max-width:520px){
     /* Keep the 2x2. Four stacked rows pushed the numbers past a full screen. */
     .strip{grid-template-columns:1fr 1fr}
-    .cell{padding:14px 10px 14px 0}
-    .cell:nth-child(odd){padding-right:10px}
+    .cell{padding:14px 14px 14px 0}
+    .cell:nth-child(odd){padding-right:16px}
     .cell .v{font-size:26px}
     .top .brand{min-height:auto;padding:14px 0}
     .top .nav{gap:18px;font-size:11px;width:100%}
