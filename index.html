@@ -31,17 +31,17 @@
   .top .nav a{text-decoration:none;margin-left:20px;padding-bottom:3px;border-bottom:2px solid transparent}
   .top .nav a:hover{border-bottom-color:var(--ink)}
 
-  .hero{padding:54px 0 44px}
+  .hero{padding:42px 0 34px}
   .hero .kick{font:700 11px/1 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.16em;
               color:var(--accent);margin-bottom:18px}
-  .hero h1{font:600 clamp(34px,5.4vw,58px)/1.06 Georgia,serif;letter-spacing:-.025em;margin:0 0 20px;max-width:17ch}
+  .hero h1{font:600 clamp(30px,4.6vw,50px)/1.08 Georgia,serif;letter-spacing:-.025em;margin:0 0 20px;max-width:17ch}
   .hero .sub{font-size:19px;line-height:1.6;color:#333;max-width:40em;margin:0}
   .hero .sub b{font-weight:600;color:var(--ink)}
 
   /* The numbers. Real, dated, on screen. This is what the site is. */
   .strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink);
          border-bottom:1px solid var(--rule)}
-  .cell{padding:20px 18px 20px 0;border-right:1px solid var(--rule)}
+  .cell{padding:18px 16px 18px 0;border-right:1px solid var(--rule)}
   .cell:last-child{border-right:0;padding-right:0}
   .cell .lab{font:600 10px/1 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.11em;
              color:var(--mute);margin-bottom:9px}
@@ -50,7 +50,7 @@
   .cell .d{font-size:11.5px;color:var(--mute);margin-top:7px}
 
   /* Sections: ruled, not boxed. Square corners throughout. */
-  .sec{padding:44px 0;border-bottom:1px solid var(--rule)}
+  .sec{padding:34px 0;border-bottom:1px solid var(--rule)}
   .sec .row{display:grid;grid-template-columns:190px 1fr;gap:32px;align-items:start}
   .sec .lab{font:700 10.5px/1.5 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.14em;
             color:var(--accent);padding-top:5px}
@@ -64,6 +64,11 @@
   .facts li:last-child{border-bottom:0}
   .facts b{font-weight:600;font-variant-numeric:tabular-nums}
 
+  .chart{margin:30px 0 0;padding:0}
+  .chart svg{display:block;width:100%;height:150px}
+  .chart figcaption{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;
+                     font:400 11.5px/1.5 system-ui,sans-serif;color:var(--mute);
+                     border-top:1px solid var(--rule);padding-top:9px;margin-top:6px}
   .foot{padding:32px 0 64px;font-size:12.5px;line-height:1.75;color:var(--mute)}
   .foot a{color:#333;text-decoration:none;border-bottom:1px solid #ccc}
   .foot .src{margin-top:14px}
@@ -76,10 +81,16 @@
     .hero{padding:38px 0 32px}
   }
   @media(max-width:520px){
-    .strip{grid-template-columns:1fr}
-    .cell{border-right:0;border-bottom:1px solid var(--rule);padding-right:0}
-    .cell:last-child{border-bottom:0}
-    .top .nav a{margin:0 14px 0 0}
+    /* Keep the 2x2. Four stacked rows pushed the numbers past a full screen. */
+    .strip{grid-template-columns:1fr 1fr}
+    .cell{padding:14px 10px 14px 0}
+    .cell:nth-child(odd){padding-right:10px}
+    .cell .v{font-size:26px}
+    .top .nav a{margin:0 12px 0 0}
+    .hero h1{font-size:clamp(28px,8vw,38px);max-width:none}
+    .hero .sub{font-size:16.5px}
+    .sec h2{font-size:22px}
+    .sec{padding:30px 0}
   }
 </style>
 </head>
@@ -127,6 +138,19 @@
       <div class="d">Bank of Canada, 2026-10-30</div>
     </div>
   </div>
+
+  <figure class="chart">
+  <svg viewBox="0 0 1040 150" preserveAspectRatio="none" role="img"
+       aria-label="Canadian national diesel, 2024-11-05 to 2026-10-27, 141.7 to 270.5 cents per litre">
+    <path d="M8.0,115.3 L17.9,112.8 L27.9,112.6 L37.8,112.8 L47.8,113.0 L57.7,113.8 L67.7,113.9 L77.6,112.2 L87.5,111.7 L97.5,109.3 L107.4,105.1 L117.4,99.0 L127.3,97.1 L137.2,98.3 L147.2,98.6 L157.1,98.3 L167.1,98.3 L177.0,99.6 L187.0,102.4 L196.9,105.3 L206.8,106.9 L216.8,110.5 L226.7,128.6 L236.7,134.3 L246.6,136.6 L256.5,137.3 L266.5,138.6 L276.4,140.6 L286.4,138.9 L296.3,138.6 L306.3,140.8 L316.2,142.0 L326.1,140.2 L336.1,130.2 L346.0,130.1 L356.0,130.2 L365.9,128.8 L375.8,128.3 L385.8,128.4 L395.7,128.6 L405.7,131.3 L415.6,133.5 L425.6,133.5 L435.5,132.8 L445.4,132.1 L455.4,131.8 L465.3,131.4 L475.3,131.0 L485.2,129.0 L495.1,128.6 L505.1,129.1 L515.0,127.3 L525.0,122.9 L534.9,118.8 L544.9,116.1 L554.8,113.4 L564.7,118.4 L574.7,120.7 L584.6,122.9 L594.6,126.5 L604.5,128.4 L614.4,129.3 L624.4,129.6 L634.3,127.2 L644.3,123.0 L654.2,116.8 L664.2,113.4 L674.1,110.2 L684.0,111.0 L694.0,108.6 L703.9,84.7 L713.9,70.4 L723.8,58.1 L733.7,52.1 L743.7,47.2 L753.6,51.4 L763.6,67.9 L773.5,71.5 L783.5,61.5 L793.4,60.6 L803.3,61.2 L813.3,62.7 L823.2,73.2 L833.2,77.2 L843.1,80.7 L853.0,90.8 L863.0,93.2 L872.9,90.7 L882.9,82.2 L892.8,66.5 L902.8,57.6 L912.7,52.0 L922.6,58.2 L932.6,52.3 L942.5,45.6 L952.5,46.8 L962.4,35.6 L972.3,8.0 L982.3,11.8 L992.2,18.0 L1002.2,19.9 L1012.1,14.8 L1022.1,14.5 L1032.0,14.6 L1032.0,142 L8.0,142 Z" fill="#0a5c3b" fill-opacity="0.08"/>
+    <path d="M8.0,115.3 L17.9,112.8 L27.9,112.6 L37.8,112.8 L47.8,113.0 L57.7,113.8 L67.7,113.9 L77.6,112.2 L87.5,111.7 L97.5,109.3 L107.4,105.1 L117.4,99.0 L127.3,97.1 L137.2,98.3 L147.2,98.6 L157.1,98.3 L167.1,98.3 L177.0,99.6 L187.0,102.4 L196.9,105.3 L206.8,106.9 L216.8,110.5 L226.7,128.6 L236.7,134.3 L246.6,136.6 L256.5,137.3 L266.5,138.6 L276.4,140.6 L286.4,138.9 L296.3,138.6 L306.3,140.8 L316.2,142.0 L326.1,140.2 L336.1,130.2 L346.0,130.1 L356.0,130.2 L365.9,128.8 L375.8,128.3 L385.8,128.4 L395.7,128.6 L405.7,131.3 L415.6,133.5 L425.6,133.5 L435.5,132.8 L445.4,132.1 L455.4,131.8 L465.3,131.4 L475.3,131.0 L485.2,129.0 L495.1,128.6 L505.1,129.1 L515.0,127.3 L525.0,122.9 L534.9,118.8 L544.9,116.1 L554.8,113.4 L564.7,118.4 L574.7,120.7 L584.6,122.9 L594.6,126.5 L604.5,128.4 L614.4,129.3 L624.4,129.6 L634.3,127.2 L644.3,123.0 L654.2,116.8 L664.2,113.4 L674.1,110.2 L684.0,111.0 L694.0,108.6 L703.9,84.7 L713.9,70.4 L723.8,58.1 L733.7,52.1 L743.7,47.2 L753.6,51.4 L763.6,67.9 L773.5,71.5 L783.5,61.5 L793.4,60.6 L803.3,61.2 L813.3,62.7 L823.2,73.2 L833.2,77.2 L843.1,80.7 L853.0,90.8 L863.0,93.2 L872.9,90.7 L882.9,82.2 L892.8,66.5 L902.8,57.6 L912.7,52.0 L922.6,58.2 L932.6,52.3 L942.5,45.6 L952.5,46.8 L962.4,35.6 L972.3,8.0 L982.3,11.8 L992.2,18.0 L1002.2,19.9 L1012.1,14.8 L1022.1,14.5 L1032.0,14.6" fill="none" stroke="#0a5c3b" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="1032.0" cy="14.6" r="4.5" fill="#0a5c3b"/>
+  </svg>
+  <figcaption>
+    <span>Canadian national diesel, weekly</span>
+    <span>2024-11-05 to 2026-10-27 &nbsp;·&nbsp; low 141.7&cent;/L, high 270.5&cent;/L</span>
+  </figcaption>
+</figure>
 
   <div class="sec"><div class="row">
     <div class="lab">The data</div>
