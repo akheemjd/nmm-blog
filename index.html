@@ -22,14 +22,17 @@
   a{color:inherit}
 
   /* Masthead: name, then the one sentence that says what this is. */
-  .top{border-bottom:2px solid var(--ink);padding:22px 0 0}
-  .top .brand{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px}
-  .top .name{font:600 17px/1 Georgia,serif;letter-spacing:-.01em;text-decoration:none}
-  .top .name span{font:400 11px/1 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.14em;
-                  color:var(--mute);margin-left:10px}
-  .top .nav{font:500 12px/1 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em}
-  .top .nav a{text-decoration:none;margin-left:20px;padding-bottom:3px;border-bottom:2px solid transparent}
-  .top .nav a:hover{border-bottom-color:var(--ink)}
+  .top{border-bottom:1px solid var(--ink);background:var(--paper)}
+  .top .brand{display:flex;justify-content:space-between;align-items:center;
+              flex-wrap:wrap;gap:16px;min-height:74px}
+  .top .name{display:inline-flex;align-items:center;gap:11px;text-decoration:none;
+             font:600 21px/1 Georgia,serif;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
+  .top .name .mk{display:block;width:26px;height:26px;flex:none}
+  .top .nav{display:flex;align-items:center;gap:30px;
+            font:600 12px/1 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.11em}
+  .top .nav a{text-decoration:none;color:#3a3a3a;padding:6px 0;border-bottom:2px solid transparent;
+              transition:color .12s,border-color .12s}
+  .top .nav a:hover{color:var(--ink);border-bottom-color:var(--ink)}
 
   .hero{padding:42px 0 34px}
   .hero .kick{font:700 11px/1 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.16em;
@@ -86,7 +89,8 @@
     .cell{padding:14px 10px 14px 0}
     .cell:nth-child(odd){padding-right:10px}
     .cell .v{font-size:26px}
-    .top .nav a{margin:0 12px 0 0}
+    .top .brand{min-height:auto;padding:14px 0}
+    .top .nav{gap:18px;font-size:11px;width:100%}
     .hero h1{font-size:clamp(28px,8vw,38px);max-width:none}
     .hero .sub{font-size:16.5px}
     .sec h2{font-size:22px}
@@ -97,7 +101,14 @@
 <body>
 
 <div class="top"><div class="wrap"><div class="brand">
-  <a class="name" href="https://www.northernmilemedia.com/">Northern Mile Media<span>Est. 2026</span></a>
+  <a class="name" href="https://www.northernmilemedia.com/">
+    <svg class="mk" viewBox="0 0 26 26" aria-hidden="true">
+      <rect x="0.5" y="0.5" width="25" height="25" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M6 19V7l14 12V7" fill="none" stroke="#0a5c3b" stroke-width="2.2"
+            stroke-linecap="square" stroke-linejoin="miter"/>
+    </svg>
+    Northern Mile Media
+  </a>
   <nav class="nav">
     <a href="https://dashboard.northernmilemedia.com/">Data</a>
     <a href="/blog/">Writing</a>
